@@ -13,7 +13,7 @@
 
 
     <div class="container">
-        <form action="" class="form">
+        <form  class="form">
             <div class="form-group">
                 <label for="">firstName</label>
                 <input type="" class="form-control" ng-model="nc1.firstName">
@@ -23,7 +23,14 @@
                 <input type="" class="form-control" ng-model="nc1.lastName">
             </div>
             <button class="btn btn-primary" ng-click="addC1(nc1)">submit</button>
-        <hr>
+            <div class="form-group">
+                <label for="">email</label>
+                <input type="" class="form-control" ng-model="nc1.email">
+            </div>
+            <div class="form-group">
+       
+           
+            <hr>
         
         </form>
 
@@ -32,13 +39,21 @@
             <tr>
                 <th>fistName</th>
                 <th>lastName</th>
+                <th>email</th>
+                <th>action</th>
             </tr>
-            <tr ng-repeat="c1 in c1s">
+            <tr ng-repeat="c1 in c1s" ng-click="select(c1)">
                 <td>{{c1.firstName}}</td>
                 <td>{{c1.lastName}}</td>
+                <td>{{c1.email}}</td>
+                <td>
+                    <button ng-click="delC1(c1)" class="btn btn-danger"
+                        >del</button>
+                </td>
             </tr>
         </table>
     </div>
+    <script src="libs/underscore/underscore.js"></script>
     <script src="libs/angular/angular.js"></script>
     <script src="app.js"></script>
 </body>
