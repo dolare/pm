@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+
+    <style></style>
+</head>
+
+<body ng-app="app" ng-controller="c1">
+
+
+    <div class="container">
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="">firstName</label>
+                <input type="" class="form-control" ng-model="nc1.firstName">
+            </div>
+            <div class="form-group">
+                <label for="">lastName</label>
+                <input type="" class="form-control" ng-model="nc1.lastName">
+            </div>
+            <button class="btn btn-primary" ng-click="addC1(nc1)">submit</button>
+        <hr>
+        
+        </form>
+
+
+        <table class="table table-striped">
+            <tr>
+                <th>fistName</th>
+                <th>lastName</th>
+            </tr>
+            <tr ng-repeat="c1 in c1s">
+                <td>{{c1.firstName}}</td>
+                <td>{{c1.lastName}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="libs/angular/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
