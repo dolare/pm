@@ -1,61 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>ng-resoure</title>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
-
-    <style></style>
 </head>
+<body ng-app="app">
+    <div ui-view="header"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>    
 
-<body ng-app="app" ng-controller="c1">
-
-
-    <div class="container">
-        <form  class="form">
-            <div class="form-group">
-                <label for="">firstName</label>
-                <input type="" class="form-control" ng-model="nc1.firstName">
-            </div>
-            <div class="form-group">
-                <label for="">lastName</label>
-                <input type="" class="form-control" ng-model="nc1.lastName">
-            </div>
-            <button class="btn btn-primary" ng-click="addC1(nc1)">submit</button>
-            <div class="form-group">
-                <label for="">email</label>
-                <input type="" class="form-control" ng-model="nc1.email">
-            </div>
-            <div class="form-group">
-       
-           
-            <hr>
-        
-        </form>
-
-
-        <table class="table table-striped">
-            <tr>
-                <th>fistName</th>
-                <th>lastName</th>
-                <th>email</th>
-                <th>action</th>
-            </tr>
-            <tr ng-repeat="c1 in c1s" ng-click="select(c1)">
-                <td>{{c1.firstName}}</td>
-                <td>{{c1.lastName}}</td>
-                <td>{{c1.email}}</td>
-                <td>
-                    <button ng-click="delC1(c1)" class="btn btn-danger"
-                        >del</button>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <script src="libs/underscore/underscore.js"></script>
-    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="libs/angular/underscroe.js"></script>
 </body>
-
 </html>
