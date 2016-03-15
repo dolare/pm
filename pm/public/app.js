@@ -1,24 +1,26 @@
+'use strict';
 //user angular UI router
 
-angular.module('app',['ui.router','ngResource'])
-    .config(function($stateProvider,$urlRouterProvider){
+angular.module('app', ['ui.router','ngResource'])
+    .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            //router for the home page
-            .state('index'),{
+            // route for the home page
+            .state('index', {
                 url:'/',
-                view:{
+                views: {      
                     'header':{
-                        templateUrl:'header.html'
-                     },
-                     'content':{
-                        templateUrl:'table.html',
+                        templateUrl:'views/header.html'
+                    },
+                    'content':{
+                        templateUrl:'views/table.html',
                         controller:'tableCtrl'
                     },
-                     'footer':{
-                         templateUrl:'footer.html'
+                    'footer':{
+                        templateUrl:'views/footer.html'
                     }
                 }
-           });
-        
+
+            })  
         $urlRouterProvider.otherwise('/');
-    });
+    })
+;

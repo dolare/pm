@@ -14,8 +14,7 @@ router.get('/c1', function(req, res, next) {
         console.log(err);
         next(err);
     
-       });        
-
+    });        
 });
 
 router.post('/c1', function(req, res, next) {
@@ -28,18 +27,33 @@ router.post('/c1', function(req, res, next) {
     });
 });
 
-router.delete('/c1/:id',function(req,res,next){
-    C1.findById(req.params.id).then(function(c1){
-        c1.remove();
-        res.json({status:true});
-    }).catch(function(err){
-        console.log(err);
-        res.json({status:false,msg:err});
-        res.status(500).json({
-            status:false,
-            msg:err
+router.put('/c1/:id',function(req,res,next){
+    console.log(req.body);
+    C1.update({_id:req.body._id},{$set:{
+        firstName:req.body.firstName,
+        lastName:req.body.lastName,
+        email:req.body.email
+    }},function(err){
+        if(err)console.log("update failed");
     });
-    })
+    console.log(req.body);
+});
+
+
+router.delete('/c1/:id',function(req,res,next){
+    console.log(C1.remove);
+    C1.findById(req.params.id)
+        .then(function(c1) {
+            return c1.remove();
+        })
+        .then(res.json.bind(res))
+        .catch(function(err) {
+            console.log(err);
+            res.status(500).json({
+                status: false,
+                msg: err
+            });
+        })
 });
 
 
